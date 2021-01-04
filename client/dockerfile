@@ -1,4 +1,4 @@
-FROM node:12
+FROM node:12-alpine
 
 # Create app directory
 WORKDIR /usr/src/client
@@ -8,6 +8,7 @@ WORKDIR /usr/src/client
 # where available (npm@5+)
 COPY package.json ./
 
+RUN npm cache clean --force
 RUN npm install
 # If you are building your code for production
 # RUN npm ci --only=production
@@ -17,4 +18,5 @@ COPY . .
 
 EXPOSE 8000
 
-CMD [ "node", "client.js" ]
+#CMD [ "node", "client.js" ]
+CMD [ "npm run dev" ]

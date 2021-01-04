@@ -4,10 +4,14 @@
     "description": "Node.js on Docker",
     "main": "client.js",
     "scripts": {
-        "start": "node client.js"
+        "start": "node client.js",
+        "dev": "nodemon client.js"
     },
     "dependencies": {
-        "express": "^4.16.1"
+        "express": "^4.16.2"
+    },
+    "devDependencies": {
+        "nodemon": "^1.14.12"
     },
     "keywords": [],
     "license": "ISC"
