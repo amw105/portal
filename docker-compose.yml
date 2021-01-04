@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+# setup node container
+  server:
+    build: ./server
+    ports:
+      - 3000:3000
+    command: node server.js
+
+# setup client container
+  client: 
+    build: ./client
+    ports:
+      - 8000:8000
+    links:
+      - server
+    command: npm run start
